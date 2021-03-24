@@ -5,7 +5,7 @@
 public class QuickFindUF {
     private int[] id;
 
-    public QuickUnionFind(int N) {
+    public QuickFindUF(int N) {
         // Set id of each object to itself
         id = new int[N]
         for(int i = 0; i < N; i++) {
