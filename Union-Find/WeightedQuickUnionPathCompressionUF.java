@@ -1,12 +1,13 @@
 // Given a set of N nodes check if two nodes have the same root. 
-// If not connected, then connect their parent roots the same in a manner that the smaller tree gets joined to the larger tree
+// If not connected, then connect their parent roots the same in a manner that the smaller tree gets joined to the larger tree.
+// After finding root, set id of each examined root to point to that root
 
 
-public class WeightedQuickUnionUF {
+public class WeightedQuickUnionPathCompressionUF {
     private int[] id;
     private int[] sz;
 
-    public WeightedQuickUnionUF(int N) {
+    public WeightedQuickUnionPathCompressionUF(int N) {
         // Set id of each object to itself
         id = new int[N]
         sz = new int[N]
@@ -17,8 +18,9 @@ public class WeightedQuickUnionUF {
     }
 
     private int root(int i) {
-        // Change parent pointer until reach root
+        // Change parent pointer until reach root and lift root up on every iteration
         while(i != id[i]) {
+            id[i] = id[id[i]];
             i = id[i];
         }
         return i;
