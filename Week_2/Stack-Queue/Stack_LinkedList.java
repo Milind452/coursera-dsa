@@ -8,7 +8,8 @@ public class Stack_LinkedList {
 
     // Node of the stack containing our data and a reference to the prev node
     private class Node {
-
+        String item;
+        Node next;
     }
 
     // Checks is the stack is empty or not
