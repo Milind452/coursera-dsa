@@ -14,8 +14,7 @@ public class Stack_LinkedList {
 
     // Checks is the stack is empty or not
     public boolean isEmpty() {
-
-        return false;
+        return top == null;
     }
 
     // Insert new node into the stack
