@@ -1,3 +1,6 @@
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
 public class Stack_LinkedList {
 
     // Points to the top of the stack
@@ -11,6 +14,7 @@ public class Stack_LinkedList {
     // Checks is the stack is empty or not
     public boolean isEmpty() {
 
+        return false;
     }
 
     // Insert new node into the stack
@@ -21,5 +25,18 @@ public class Stack_LinkedList {
     // Remove and return the top most node
     public String pop() {
 
+        return null;
+    }
+
+    public static void main(String[] args) {
+        Stack_LinkedList stack = new Stack_LinkedList();
+        while(!StdIn.isEmpty()) {
+            String s = StdIn.readString();
+            if( s.equals("-")) {
+                StdOut.print(stack.pop());
+            } else {
+                stack.push(s);
+            }
+        }
     }
 }
