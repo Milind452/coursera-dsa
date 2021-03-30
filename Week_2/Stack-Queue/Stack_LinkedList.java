@@ -37,6 +37,10 @@ public class Stack_LinkedList {
         while(!StdIn.isEmpty()) {
             String s = StdIn.readString();
             if( s.equals("-")) {
+                if(stack.isEmpty()) {
+                    System.out.println("***Stack Empty***");
+                    continue;
+                }
                 StdOut.print(stack.pop());
             } else {
                 stack.push(s);
