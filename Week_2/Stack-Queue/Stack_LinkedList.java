@@ -12,7 +12,7 @@ public class Stack_LinkedList {
         Node next;
     }
 
-    // Checks is the stack is empty or not
+    // Checks if the stack is empty or not
     public boolean isEmpty() {
         return top == null;
     }
@@ -27,8 +27,9 @@ public class Stack_LinkedList {
 
     // Remove and return the top most node
     public String pop() {
-
-        return null;
+        String item = top.item;
+        top = top.next;
+        return item;
     }
 
     public static void main(String[] args) {
