@@ -1,3 +1,12 @@
+// Performance analysis of stack using linked list
+// Every operation takes constant time. So time complexity = O(1)
+// Every node has: 
+//        8 Bytes (reference to String)
+//        8 Bytes (reference to Node)
+//        8 Bytes (inner class extra overhead)
+//        16 Bytes (object overhead)
+//  Hence, space consumed by each node ~ 40 Bytes
+
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
