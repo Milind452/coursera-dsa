@@ -19,7 +19,10 @@ public class Stack_LinkedList {
 
     // Insert new node into the stack
     public void push(String item) {
-
+        Node temp = top;
+        top = new Node();
+        top.item = item;
+        top.next = temp;
     }
 
     // Remove and return the top most node
