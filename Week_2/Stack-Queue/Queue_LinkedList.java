@@ -4,10 +4,10 @@ import edu.princeton.cs.algs4.StdOut;
 public class Queue_LinkedList {
 
     // Points to the first node in the queue
-    private Node first;
+    private Node first = null;
 
     // Points to the last node in the queue
-    private Node last;
+    private Node last = null;
 
     // Node of the queue containing our data and a reference to the prev node
     private class Node {
@@ -17,7 +17,7 @@ public class Queue_LinkedList {
 
     // Checks if the queue is empty or not
     public Boolean isEmpty() {
-        return false;
+        return first == null;
     }
 
     // Insert new node to the end of the queue
