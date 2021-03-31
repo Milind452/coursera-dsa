@@ -35,6 +35,13 @@ public class Queue_LinkedList {
 
     // Remove and return the first node in the queue
     public String dequeue() {
+        if(isEmpty()) {
+            last = null;
+        } else {
+            String item = first.item;
+            first = first.next;
+            return item;
+        }
         return null;
     }
 
