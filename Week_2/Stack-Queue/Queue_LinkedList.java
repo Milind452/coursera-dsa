@@ -22,7 +22,15 @@ public class Queue_LinkedList {
 
     // Insert new node to the end of the queue
     public void enqueue(String item) {
-
+        Node temp = last;
+        last = new Node();
+        last.item = item;
+        last.next = null;
+        if(isEmpty()) {
+            first = last;
+        } else {
+            temp.next = last;
+        }
     }
 
     // Remove and return the first node in the queue
