@@ -29,4 +29,20 @@ public class Queue_LinkedList {
     public String dequeue() {
         return null;
     }
+
+    public static void main(String[] args) {
+        Queue_LinkedList queue = new Queue_LinkedList();
+        while(!StdIn.isEmpty()) {
+            String s = StdIn.readString();
+            if( s.equals("-")) {
+                if(queue.isEmpty()) {
+                    System.out.println("***Queue Empty***");
+                    continue;
+                }
+                StdOut.print(queue.dequeue());
+            } else {
+                queue.enqueue(s);
+            }
+        }
+    }
 }
