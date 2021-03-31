@@ -33,17 +33,20 @@ public class GenericStack<Item> {
     }
 
     public static void main(String[] args) {
-        GenericStack<Integer> stack = new GenericStack<>();
+        GenericStack<Data> stack = new GenericStack<>();
         while(!StdIn.isEmpty()) {
-            int s = StdIn.readInt();
-            if( s == 0 ) {
+            String s = StdIn.readString();
+            int x = StdIn.readInt();
+            Data data = new Data(s, x);
+            if( s.equals("-") ) {
                 if(stack.isEmpty()) {
                     System.out.println("***Stack Empty***");
                     continue;
                 }
-                StdOut.print(stack.pop());
+                data = stack.pop();
+                data.display();
             } else {
-                stack.push(s);
+                stack.push(data);
             }
         }
     }
