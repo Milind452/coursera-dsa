@@ -1,3 +1,6 @@
+// Performance analysis of queue using linked list
+// Every operation takes constant time. So time complexity = O(1)
+
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
