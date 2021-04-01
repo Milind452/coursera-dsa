@@ -38,6 +38,18 @@ public class GenericStack<Item> implements Iterable<Item>{
         return new ListIterator();
     }
 
+    private class ListIterator implements Iterator<Item> {
+        private Node current = top;
+
+        public boolean hasNext() {
+
+        }
+
+        public Item next() {
+
+        }
+    }
+
     public static void main(String[] args) {
         GenericStack<Data> stack = new GenericStack<>();
         while(!StdIn.isEmpty()) {
