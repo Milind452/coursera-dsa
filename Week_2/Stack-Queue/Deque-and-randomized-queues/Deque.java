@@ -55,7 +55,9 @@ public class Deque<Item> implements Iterable<Item> {
 
     // remove and return the item from the front
     public Item removeFirst() {
-
+        Item item = first.item;
+        first = first.next;
+        return item;
     }
 
     // remove and return the item from the back
