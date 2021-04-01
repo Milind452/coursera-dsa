@@ -17,12 +17,14 @@ public class Deque<Item> implements Iterable<Item> {
 
     // construct an empty deque
     public Deque() {
-
+        this.first = null;
+        this.last = null;
+        this.size = 0;
     }
 
     // is the deque empty?
     public boolean isEmpty() {
-
+        
     }
 
     // return the number of items on the deque
