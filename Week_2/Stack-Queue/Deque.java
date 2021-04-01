@@ -71,31 +71,32 @@ public class Deque<Item> implements Iterable<Item> {
 
     // remove and return the item from the front
     public Item removeFirst() {
-        Item item = first.item;
-        size -= 1;
+        Item item;
         if(isEmpty()) {
             first = null;
             last = null;
             throw new java.util.NoSuchElementException();
         } else {
+            item = first.item;
             first = first.next;
-            first.prev = null;
+            // first.prev = null;
         }
+        size -= 1;
         return item;
     }
 
     // remove and return the item from the back
     public Item removeLast() {
-        Item item = last.item;
-        size -= 1;
+        Item item;
         if(isEmpty()) {
             first = null;
             last = null;
             throw new java.util.NoSuchElementException();
         } else {
+            item = last.item;
             last = last.prev;
-            last.next = null;
-        }
+        }        
+        size -= 1;
         return item;
     }
 
@@ -118,7 +119,6 @@ public class Deque<Item> implements Iterable<Item> {
             } else {
                 Item item = current.item;
                 current = current.next;
-                current.prev = null;
                 return item;
             }
         }
@@ -133,15 +133,16 @@ public class Deque<Item> implements Iterable<Item> {
         Deque<String> deque = new Deque<>();
         while (!StdIn.isEmpty()) {
             String s = StdIn.readString();
-            if (s.equals("-")) {
-                if(deque.isEmpty()) {
-                    System.out.println("***Queue Empty***");
-                    continue;
+            if(s.equals("run")) {
+                for(String k : deque) {
+                    StdOut.print(k);
                 }
+            }
+            if (s.equals("-")) {
                 StdOut.print(deque.removeLast());
             }                
             else {
-                deque.addFirst(s);
+                deque.addLast(s);
             }
         }
     }
