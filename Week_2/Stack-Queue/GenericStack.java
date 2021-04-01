@@ -69,5 +69,8 @@ public class GenericStack<Item> implements Iterable<Item>{
                 stack.push(data);
             }
         }
+        for(Data data : stack) {
+            data.display();
+        }
     }
 }
