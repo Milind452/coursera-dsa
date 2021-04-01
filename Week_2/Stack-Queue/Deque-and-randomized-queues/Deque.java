@@ -111,6 +111,10 @@ public class Deque<Item> implements Iterable<Item> {
             current.prev = null;
             return item;
         }
+
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
     }
 
     // unit testing (required)
