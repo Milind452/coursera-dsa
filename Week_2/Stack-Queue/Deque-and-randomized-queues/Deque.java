@@ -95,12 +95,17 @@ public class Deque<Item> implements Iterable<Item> {
 
     private class ListIterator implements Iterator<Item> {
 
+        private Node current = first;
+
         public boolean hasNext() {
-            return false;
+            return current != null;
         }
 
         public Item next() {
-            return null;
+            Item item = current.item;
+            current = current.next;
+            current.prev = null;
+            return item;
         }
     }
 
