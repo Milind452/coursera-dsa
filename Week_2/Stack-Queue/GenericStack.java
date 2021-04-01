@@ -42,11 +42,13 @@ public class GenericStack<Item> implements Iterable<Item>{
         private Node current = top;
 
         public boolean hasNext() {
-
+            return current != null;
         }
 
         public Item next() {
-
+            Item item = current.item;
+            current = current.next;
+            return item;
         }
     }
 
