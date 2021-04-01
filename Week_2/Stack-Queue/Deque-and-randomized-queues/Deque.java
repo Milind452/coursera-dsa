@@ -5,6 +5,16 @@ import java.util.Iterator;
 
 public class Deque<Item> implements Iterable<Item> {
     
+    private Node first;
+    private Node last;
+
+    int size;
+
+    private class Node {
+        Item item;
+        Node next;
+    }
+
     // construct an empty deque
     public Deque() {
 
@@ -47,6 +57,6 @@ public class Deque<Item> implements Iterable<Item> {
 
     // unit testing (required)
     public static void main(String[] args) {
-        
+
     }
 }
