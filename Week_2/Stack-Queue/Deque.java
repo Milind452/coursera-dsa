@@ -137,12 +137,17 @@ public class Deque<Item> implements Iterable<Item> {
                 for(String k : deque) {
                     StdOut.print(k);
                 }
-            }
-            if (s.equals("-")) {
-                StdOut.print(deque.removeLast());
-            }                
-            else {
-                deque.addLast(s);
+            } else {
+                String k = StdIn.readString();
+                if(k.equals("rl")) {
+                    StdOut.print(deque.removeLast());
+                } else if(k.equals("rf")) {
+                    StdOut.print(deque.removeFirst());
+                } else if(k.equals("al")) {
+                    deque.addLast(s);
+                } else {
+                    deque.addFirst(s);
+                }
             }
         }
     }
