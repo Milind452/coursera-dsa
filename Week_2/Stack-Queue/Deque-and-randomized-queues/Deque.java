@@ -2,6 +2,7 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;
+import java.util.ListIterator;
 
 public class Deque<Item> implements Iterable<Item> {
     
@@ -89,7 +90,18 @@ public class Deque<Item> implements Iterable<Item> {
 
     // return an iterator over items in order from front to back
     public Iterator<Item> iterator() {
+        return new ListIterator();
+    }
 
+    private class ListIterator implements Iterator<Item> {
+
+        public boolean hasNext() {
+            return false;
+        }
+
+        public Item next() {
+            return null;
+        }
     }
 
     // unit testing (required)
