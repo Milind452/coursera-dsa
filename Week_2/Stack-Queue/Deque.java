@@ -108,9 +108,10 @@ public class Deque<Item> implements Iterable<Item> {
     private class ListIterator implements Iterator<Item> {
 
         private Node current = first;
+        private int index = 0;
 
         public boolean hasNext() {
-            return current != null;
+            return index < size;
         }
 
         public Item next() {
@@ -118,7 +119,8 @@ public class Deque<Item> implements Iterable<Item> {
                 throw new java.util.NoSuchElementException();
             } else {
                 Item item = current.item;
-                current = current.next;
+                index += 1;
+                current = current.next;                
                 return item;
             }
         }
