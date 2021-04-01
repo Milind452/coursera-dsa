@@ -131,6 +131,19 @@ public class Deque<Item> implements Iterable<Item> {
 
     // unit testing (required)
     public static void main(String[] args) {
-
+        Deque<String> deque = new Deque<>();
+        while (!StdIn.isEmpty()) {
+            String s = StdIn.readString();
+            if (s.equals("-")) {
+                if(deque.isEmpty()) {
+                    System.out.println("***Queue Empty***");
+                    continue;
+                }
+                StdOut.print(deque.removeLast());
+            }                
+            else {
+                deque.addFirst(s);
+            }
+        }
     }
 }
