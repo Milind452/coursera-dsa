@@ -1,7 +1,9 @@
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
-public class GenericStack<Item> {
+import java.util.Iterator;
+
+public class GenericStack<Item> implements Iterable<Item>{
 
     // Points to the top of the stack
     private Node top = null;
@@ -30,6 +32,10 @@ public class GenericStack<Item> {
         Item item = top.item;
         top = top.next;
         return item;
+    }
+
+    public Iterator<Item> iterator() {
+        return new ListIterator();
     }
 
     public static void main(String[] args) {
