@@ -28,10 +28,26 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     // return the number of items on the randomized queue
-    public int size();
+    public int size() {
+        return size;
+    }
 
     // add the item
-    public void enqueue(Item item);
+    public void enqueue(Item item) {
+        if(item == null) {
+            throw new IllegalArgumentException();
+        }
+        Node temp = last;
+        last = new Node();
+        last.item = item;
+        last.next = null;
+        if(isEmpty()) {
+            first = last;
+        } else {
+            temp.next = last;
+        }
+        size += 1;
+    }
 
     // remove and return a random item
     public Item dequeue();
