@@ -68,7 +68,34 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     public Item sample();
 
     // return an independent iterator over items in random order
-    public Iterator<Item> iterator();
+    public Iterator<Item> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<Item> {
+
+        private Node current = first;
+        private int index = 0;
+
+        public boolean hasNext() {
+            return index < size;
+        }
+
+        public Item next() {
+            if(!hasNext()) {
+                throw new java.util.NoSuchElementException();
+            } else {
+                Item item = current.item;
+                index += 1;
+                current = current.next;                
+                return item;
+            }
+        }
+
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+    }
 
     // unit testing (required)
     public static void main(String[] args);
