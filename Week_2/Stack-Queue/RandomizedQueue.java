@@ -50,7 +50,19 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     // remove and return a random item
-    public Item dequeue();
+    public Item dequeue() {
+        Item item;
+        if(isEmpty()) {
+            first = null;
+            last = null;
+            throw new java.util.NoSuchElementException();
+        } else {
+            item = first.item;
+            first = first.next;
+        }
+        size -= 1;
+        return item;
+    }
 
     // return a random item (but do not remove it)
     public Item sample();
