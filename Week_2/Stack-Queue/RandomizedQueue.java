@@ -5,8 +5,22 @@ import java.util.Iterator;
 
 public class RandomizedQueue<Item> implements Iterable<Item> {
     
+    private Node first;
+    private Node last;
+
+    int size;
+
+    private class Node() {
+        Item item;
+        Node next;
+    }
+
     // construct an empty randomized queue
-    public RandomizedQueue();
+    public RandomizedQueue() {
+        this.first = null;
+        this.last = null;
+        this.size = 0;
+    }
 
     // is the randomized queue empty?
     public boolean isEmpty();
