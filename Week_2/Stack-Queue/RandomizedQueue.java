@@ -10,7 +10,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     int size;
 
-    private class Node() {
+    private class Node {
         Item item;
         Node next;
     }
@@ -65,7 +65,18 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     // return a random item (but do not remove it)
-    public Item sample();
+    public Item sample() {
+        Item item;
+        if(isEmpty()) {
+            first = null;
+            last = null;
+            throw new java.util.NoSuchElementException();
+        } else {
+            item = first.item;
+        }
+        size -= 1;
+        return item;
+    }
 
     // return an independent iterator over items in random order
     public Iterator<Item> iterator() {
@@ -98,5 +109,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     // unit testing (required)
-    public static void main(String[] args);
+    public static void main(String[] args) {
+        RandomizedQueue<String> queue = new RandomizedQueue<>();
+    }
 }
