@@ -6,6 +6,7 @@ import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+@SuppressWarnings("unchecked")
 public class RandomizedQueue<Item> implements Iterable<Item> {
     private Item[] a;    // array of items
     private int N;    // number of items in randomized queue
