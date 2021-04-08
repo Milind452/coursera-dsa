@@ -3,7 +3,7 @@ package Elementary_Sorts;
 public class Insertion {
 
     public static void sort(Comparable[] a) {
-        int len = a.lenght;
+        int len = a.length;
         for(int i = 0; i < len; i++) {
             for(int j = i; j > 0; j--) {
                 if(less(a[j], a[j - 1])) {
