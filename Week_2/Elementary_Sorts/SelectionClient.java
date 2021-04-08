@@ -1,3 +1,5 @@
+package Elementary_Sorts;
+
 public class SelectionClient implements Comparable<SelectionClient>{
 
     private int x;

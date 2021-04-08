@@ -1,4 +1,5 @@
-@SuppressWarnings("unchecked")
+package Elementary_Sorts;
+
 public class Selection {
 
     public static void sort(Comparable[] a) {
