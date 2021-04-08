@@ -8,8 +8,9 @@ public class Insertion {
             for(int j = i; j > 0; j--) {
                 if(less(a[j], a[j - 1])) {
                     swap(a, j, j - 1);
+                } else {
+                    break;
                 }
-                break;
             }
         }
     }
